@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, black, grey);
+}
+
+.container {
+    /* border: 1px solid black; */
+    padding: 20px;
+    /* border-radius: 10px; */
+    /* background: transparent; */
+    /* box-shadow: 0 3px 15px; */
+
+    background: linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px  0 rgba(0, 0, 0, .37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 32px;
+}
+
+.input input {
+    width: 395px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 24px;
+    margin: 10px;
+    background: transparent;
+    text-align: right;
+    font-size: 40px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.input input::placeholder {
+    color: #ffffff;
+
+}
+
+/* .input input:hover{
+    box-shadow: 0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan,0 0 200px cyan;
+} */
+
+.btn button {
+    outline: none;
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 10px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 25px;
+    box-shadow: 5px 5px 10px grey;
+    cursor: pointer;
+    /* box-shadow: 0 0 5px cyan,0 0 25px cyan; */
+}
+
+
+.btn button:hover{
+    background-color: rgba(0, 0, 0, 0.372);
+    box-shadow: 0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan,0 0 200px cyan;
+}
+
+
+.btn .eql {
+    background-color: blue;
+}
+
+
+
+.btn .eql:hover{
+    background-color:rgba(238, 127, 8, 0.839);
+}
+
+.btn .operator {
+    color: rgb(55, 226, 55);
+}
+
+@media (max-width:450px) {
+
+    .body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .container {
+        width: 340px;
+    }
+
+    .input input {
+        width: 300px;
+        border: none;
+        outline: none;
+        padding: 24px;
+        margin: 5px;
+        background: transparent;
+        text-align: right;
+        font-size: 40px;
+        cursor: pointer;
+        color: #ffffff;
+    }
+
+    .btn button {
+        outline: none;
+        border: none;
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        border-radius: 10px;
+        background: transparent;
+        color: #ffffff;
+        font-size: 25px;
+        box-shadow: 5px 5px 10px grey;
+        cursor: pointer;
+    }
+    
+}
