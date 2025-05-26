@@ -3,50 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Professional Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="container">
-        <div class="input">
-            <input type="text" id="inputBox" placeholder="0">
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
+    <div class="w-full max-w-sm">
+        <!-- Calculator Container -->
+        <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/20">
+            <!-- Display -->
+            <div class="mb-6">
+                <input 
+                    type="text" 
+                    id="inputBox" 
+                    placeholder="0"
+                    readonly
+                    class="w-full bg-transparent text-white text-right text-4xl font-mono font-light p-4 border-none outline-none placeholder-white/50"
+                >
+                <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mt-2"></div>
+            </div>
+
+            <!-- Button Grid -->
+            <div class="grid grid-cols-5 gap-3">
+                <!-- Row 1 -->
+                <button class="calc-btn operator-btn" data-action="(">(</button>
+                <button class="calc-btn operator-btn" data-action=")">)</button>
+                <button class="calc-btn operator-btn" data-action="%">%</button>
+                <button class="calc-btn delete-btn" data-action="Del">
+                    <svg class="w-5 h-5 mx-auto " fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"></path>
+                    </svg>
+                </button>
+                <button class="calc-btn clear-btn" data-action="AC">AC</button>
+
+                <!-- Row 2 -->
+                <button class="calc-btn number-btn" data-action="7">7</button>
+                <button class="calc-btn number-btn" data-action="8">8</button>
+                <button class="calc-btn number-btn" data-action="9">9</button>
+                <button class="calc-btn operator-btn" data-action="/">÷</button>
+                <button class="calc-btn function-btn" data-action="Sqr">x²</button>
+
+                <!-- Row 3 -->
+                <button class="calc-btn number-btn" data-action="4">4</button>
+                <button class="calc-btn number-btn" data-action="5">5</button>
+                <button class="calc-btn number-btn" data-action="6">6</button>
+                <button class="calc-btn operator-btn" data-action="*">×</button>
+                <button class="calc-btn function-btn" data-action="Cub">x³</button>
+
+                <!-- Row 4 -->
+                <button class="calc-btn number-btn" data-action="1">1</button>
+                <button class="calc-btn number-btn" data-action="2">2</button>
+                <button class="calc-btn number-btn" data-action="3">3</button>
+                <button class="calc-btn operator-btn" data-action="-">−</button>
+                <button class="calc-btn function-btn" data-action="Rnd">⌊⌉</button>
+
+                <!-- Row 5 -->
+                <button class="calc-btn number-btn" data-action="0">0</button>
+                <button class="calc-btn number-btn" data-action="00">00</button>
+                <button class="calc-btn number-btn" data-action=".">.</button>
+                <button class="calc-btn equals-btn" data-action="=">=</button>
+                <button class="calc-btn operator-btn" data-action="+">+</button>
+            </div>
         </div>
-        <div class="btn">
-            <button class="operator">(</button>
-            <button class="operator">)</button>
-            <button class="operator">%</button>
-            <button class="operator">Del</button>
-            <button class="operator">AC</button>
-        </div>
-        <div class="btn">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="operator">/</button>
-            <button class="operator">Sqr</button>
-        </div>
-        <div class="btn">
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="operator">*</button>
-            <button class="operator">Cub</button>
-        </div>
-        <div class="btn">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="operator">-</button>
-            <button class="operator">Rnd</button>
-        </div>
-        <div class="btn">
-            <button>0</button>
-            <button>00</button>
-            <button>.</button>
-            <button class="eql">=</button>
-            <button class="operator">+</button>
+
+        <!-- Footer -->
+        <div class="text-center mt-6 text-white/60 text-sm">
+            Professional Calculator
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

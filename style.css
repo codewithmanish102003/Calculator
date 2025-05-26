@@ -1,129 +1,164 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    width: 100vw;
-    height: 100vh;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(45deg, black, grey);
-}
-
-.container {
-    /* border: 1px solid black; */
-    padding: 20px;
-    /* border-radius: 10px; */
-    /* background: transparent; */
-    /* box-shadow: 0 3px 15px; */
-
-    background: linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,0));
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px  0 rgba(0, 0, 0, .37);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 32px;
-}
-
-.input input {
-    width: 395px;
-    border: none;
-    border-radius: 5px;
+/* Custom button styles */
+.calc-btn {
+    height: 3.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: all 0.2s ease;
     outline: none;
-    padding: 24px;
-    margin: 10px;
-    background: transparent;
-    text-align: right;
-    font-size: 40px;
-    cursor: pointer;
-    color: #ffffff;
+    transform: translateY(0);
 }
 
-.input input::placeholder {
-    color: #ffffff;
-
+.calc-btn:active {
+    transform: translateY(0) scale(0.95);
 }
 
-/* .input input:hover{
-    box-shadow: 0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan,0 0 200px cyan;
-} */
-
-.btn button {
+.calc-btn:focus {
     outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Number buttons */
+.number-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.number-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Operator buttons */
+.operator-btn {
+    background: rgba(59, 130, 246, 0.2);
+    color: rgb(147, 197, 253);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.operator-btn:hover {
+    background: rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Function buttons */
+.function-btn {
+    background: rgba(168, 85, 247, 0.2);
+    color: rgb(196, 181, 253);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.function-btn:hover {
+    background: rgba(168, 85, 247, 0.3);
+    border-color: rgba(168, 85, 247, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Equals button */
+.equals-btn {
+    background: linear-gradient(to right, rgb(249, 115, 22), rgb(239, 68, 68));
+    color: white;
     border: none;
-    width: 60px;
-    height: 60px;
-    margin: 10px;
-    border-radius: 10px;
-    background: transparent;
-    color: #ffffff;
-    font-size: 25px;
-    box-shadow: 5px 5px 10px grey;
-    cursor: pointer;
-    /* box-shadow: 0 0 5px cyan,0 0 25px cyan; */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-
-.btn button:hover{
-    background-color: rgba(0, 0, 0, 0.372);
-    box-shadow: 0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan,0 0 200px cyan;
+.equals-btn:hover {
+    background: linear-gradient(to right, rgb(234, 88, 12), rgb(220, 38, 38));
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-1px);
 }
 
-
-.btn .eql {
-    background-color: blue;
+/* Delete button */
+.delete-btn {
+    background: rgba(239, 68, 68, 0.2);
+    color: rgb(252, 165, 165);
+    border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
-
-
-.btn .eql:hover{
-    background-color:rgba(238, 127, 8, 0.839);
+.delete-btn:hover {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: rgba(239, 68, 68, 0.4);
+    transform: translateY(-1px);
 }
 
-.btn .operator {
-    color: rgb(55, 226, 55);
+/* Clear button */
+.clear-btn {
+    background: rgba(239, 68, 68, 0.3);
+    color: rgb(254, 202, 202);
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-@media (max-width:450px) {
+.clear-btn:hover {
+    background: rgba(239, 68, 68, 0.4);
+    border-color: rgba(239, 68, 68, 0.5);
+    transform: translateY(-1px);
+}
 
-    .body {
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .container {
-        width: 340px;
-    }
-
-    .input input {
-        width: 300px;
-        border: none;
-        outline: none;
-        padding: 24px;
-        margin: 5px;
-        background: transparent;
-        text-align: right;
-        font-size: 40px;
-        cursor: pointer;
-        color: #ffffff;
-    }
-
-    .btn button {
-        outline: none;
-        border: none;
-        width: 36px;
-        height: 50px;
-        margin: 10px;
-        border-radius: 10px;
-        background: transparent;
-        color: #ffffff;
-        font-size: 20px;
-        box-shadow: 5px 5px 10px grey;
-        cursor: pointer;
+/* Responsive design */
+@media (max-width: 480px) {
+    .calc-btn {
+        height: 3rem;
+        font-size: 1rem;
     }
     
+    #inputBox {
+        font-size: 2rem !important;
+        padding: 1rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .calc-btn {
+        height: 2.5rem;
+        font-size: 0.875rem;
+    }
+    
+    #inputBox {
+        font-size: 1.5rem !important;
+        padding: 0.75rem !important;
+    }
+}
+
+/* Animation for button press */
+.calc-btn:active {
+    animation: buttonPress 0.1s ease;
+}
+
+@keyframes buttonPress {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(1px) scale(0.98);
+    }
+    100% {
+        transform: translateY(0) scale(0.95);
+    }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: all 0.2s ease;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
