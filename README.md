@@ -6,7 +6,6 @@ An interactive calculator built using HTML, CSS, and JavaScript that performs ba
 - Perform real-time calculations
 - Clear and user-friendly interface
 - Responsive design for mobile and desktop
-- Built entirely with vanilla JavaScript
 
 🔧 Technologies Used:
 - HTML for structure
@@ -14,7 +13,7 @@ An interactive calculator built using HTML, CSS, and JavaScript that performs ba
 - JavaScript for calculation logic and interactivity
 
 🌐 Live Demo:
-[Link to live site, if available]
+[https://basefuncalc.netlify.app/]
 
 📁 Repository:
 https://github.com/codewithmanish102003/Calculator
